@@ -22,4 +22,11 @@ public class AccountController {
         accountservice.CreateAccount(userAccount);
         return "Made account successfully!";
     }
+
+    @PutMapping("/{accountId}/balance")
+    public String updateBalance(@PathVariable("accountId") int accountId, @RequestBody float newBalance) {
+        accountservice.updateBalance(accountId, newBalance);
+        return "Balance updated successfully!";
+    }
+
 }

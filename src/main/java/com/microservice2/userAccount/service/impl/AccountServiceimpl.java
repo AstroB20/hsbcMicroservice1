@@ -21,4 +21,18 @@ public class AccountServiceimpl implements Accountservice {
         accountRepo.save(userAccount);
         return "Saved Account Details!!!";
     }
+    @Override
+    public String UpdateAccountBalance(UserAccount userAccount) {
+        accountRepo.save(userAccount);
+        return "Updated account";
+    }
+    
+    @Override
+    public String updateBalance(int accountId, float newBalance) {
+        UserAccount account = accountRepo.findById(accountId)
+                .orElseThrow(() -> new RuntimeException("Account not found with ID: " + accountId));
+        account.setBalance(newBalance);
+        accountRepo.save(account);
+        return "Balance updated successfully";
+    }
 }

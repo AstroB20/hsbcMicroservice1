@@ -4,4 +4,4 @@ spring:
     username: root
     password: Tiger
 
-  jpa.hibernate.ddl_auto: create
+  jpa.hibernate.ddl_auto: update
